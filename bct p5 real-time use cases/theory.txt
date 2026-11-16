@@ -1,0 +1,261 @@
+Blockchain – Assignment No. 5
+Theory practical
+ Important for external exam
+
+
+Title: Write a survey report on types of Blockchains and their real-time use cases.
+
+Objective: To study different types of blockchain technology, their applications and implementations.
+
+Prerequisites:
+1. Basic knowledge of cryptocurrency.
+2. Basic knowledge of distributed computing.
+3. Knowledge of blockchain working.
+This practical has no programming code. You need to understand the four types of blockchain, their advantages, disadvantages and applications.
+1. Important theory – Write in your journal
+Introduction
+Blockchain is a decentralized digital ledger that stores transaction records in blocks. It provides security, transparency and immutability.
+
+There are four main types of blockchain:
+1. Public Blockchain
+2. Private Blockchain
+3. Hybrid Blockchain
+4. Consortium Blockchain
+2. Types of Blockchain
+1. Public Blockchain
+A Public Blockchain is an open and decentralized network where anyone can join, view transactions and participate in the network.
+
+Features:
+- Anyone can participate.
+- No central authority controls the network.
+- All participants can verify transactions.
+- Provides transparency and decentralization.
+Advantages:
+1. Trustable: Transactions are verified by network participants.
+2. Secure: Data is distributed across many nodes.
+3. Anonymous: Users can participate without revealing their real identity.
+4. Decentralized: No single authority controls the network.
+Disadvantages:
+1. Slow transaction processing.
+2. High energy consumption in Proof of Work networks.
+3. Difficult to control and regulate.
+Real-time use cases:
+- Cryptocurrency transactions.
+- Decentralized finance (DeFi).
+- Smart contracts.
+- Digital payments.
+Examples: Bitcoin, Ethereum.
+
+
+
+
+
+
+
+
+luxalgo.com
+
+
+2. Private Blockchain
+A Private Blockchain is a restricted network where only authorized users can participate. It is generally controlled by one organization.
+
+Features:
+- Only selected users can access it.
+- Works within a closed network.
+- Provides privacy and controlled access.
+- Suitable for organizations.
+Advantages:
+1. Speed: Transactions are processed faster.
+2. Scalability: Network size can be controlled.
+3. Privacy: Confidential information is protected.
+4. Performance: Limited participants improve efficiency.
+Disadvantages:
+1. Security: Limited nodes may increase manipulation risks.
+2. Centralization: Controlled by an organization.
+3. Limited participation: Few nodes can affect the network.
+Real-time use cases:
+- Internal company auditing.
+- Organization voting.
+- Asset management.
+- Private business records.
+Examples: Hyperledger, Corda.
+
+
+
+
+
+
+
+
+hyperledger-fabric.readthedocs.io
+
+
+3. Hybrid Blockchain
+A Hybrid Blockchain is a combination of Public and Private Blockchain. Some information is private, while selected information is available publicly.
+
+Features:
+- Combines public and private networks.
+- Uses permission-based and permissionless systems.
+- Access is controlled through smart contracts.
+- Organizations can decide which information is public.
+Advantages:
+1. Ecosystem: Combines the benefits of public and private blockchain.
+2. Cost: Transactions can be cheaper due to limited verification.
+3. Architecture: Provides customization and security.
+4. Operations: Controls which transactions are public.
+Disadvantages:
+1. Efficiency: Difficult to implement and maintain.
+2. Transparency: Organizations may hide some information.
+3. Participation: Closed access can reduce network participation.
+Real-time use cases:
+- Healthcare records.
+- Government services.
+- Real estate.
+- Financial companies.
+Examples given in the practical: Ripple network and XRP token.
+
+
+
+
+
+
+
+
+blocsys.com
+
+
+4. Consortium Blockchain
+A Consortium Blockchain is a type of blockchain managed by multiple organizations instead of a single organization. It is also known as Federated Blockchain.
+
+Features:
+- Managed by multiple organizations.
+- Only selected organizations validate transactions.
+- Provides controlled access.
+- Suitable for business collaboration.
+Advantages:
+1. Speed: Limited validators make transaction processing faster.
+2. Authority: Multiple organizations participate in management.
+3. Privacy: Transaction information is shared among authorized members.
+4. Flexibility: Decisions can be taken faster within the group.
+Disadvantages:
+1. Approval: Members must agree on protocols.
+2. Transparency: Organizations may hide information.
+3. Vulnerability: Compromised nodes may affect network security.
+Real-time use cases:
+- Banking and finance.
+- Payment processing.
+- Supply chain management.
+- Food tracking between organizations.
+Examples: Tendermint, Multichain.
+
+
+
+
+
+
+
+
+linkedin.com
+
+
+3. Difference between four types of Blockchain
+This table is very important for your external viva.
+Feature	Public	Private	Hybrid	Consortium
+Access	Anyone	Authorized users	Mixed access	Selected organizations
+Control	Decentralized	One organization	Organization	Multiple organizations
+Transparency	High	Limited	Partial	Restricted
+Speed	Generally slower	Faster	Moderate	Faster
+Example	Bitcoin	Hyperledger	Ripple (as given)	Multichain
+
+4. Quick revision – Memorize this
+Four types in one line
+
+
+
+
+
+
+
+
+
+
+Public Blockchain
+
+Anyone can participate – Bitcoin, Ethereum.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Private Blockchain
+
+Only authorized users – Hyperledger, Corda.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hybrid Blockchain
+
+Combination of public and private.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consortium Blockchain
+
+Controlled by multiple organizations.
+
+
+
+5. Important viva questions
+Question	Answer
+1. How many types of blockchain are there?	Four main types.
+2. Name the four types.	Public, Private, Hybrid and Consortium.
+3. What is Public Blockchain?	Open blockchain accessible to everyone.
+4. Give examples of Public Blockchain.	Bitcoin and Ethereum.
+5. What is Private Blockchain?	Blockchain accessible to authorized users.
+6. Give examples of Private Blockchain.	Hyperledger and Corda.
+7. What is Hybrid Blockchain?	Combination of public and private blockchain.
+8. What is Consortium Blockchain?	Blockchain managed by multiple organizations.
+9. What is Federated Blockchain?	Another name for Consortium Blockchain.
+10. Which blockchain is open to everyone?	Public Blockchain.
+11. Which blockchain provides controlled access?	Private Blockchain.
+12. Which blockchain combines two types?	Hybrid Blockchain.
+13. Which blockchain is managed by multiple organizations?	Consortium Blockchain.
+14. What is a node?	A computer participating in a blockchain network.
+15. What is decentralization?	No single authority controls the network.
+16. What is Proof of Work?	A consensus mechanism used to validate transactions.
+17. What is a smart contract?	A self-executing program on blockchain.
+18. What is supply chain management?	Tracking goods from production to delivery.
+
+6. Result
+Hence, successfully studied the four types of Blockchain: Public, Private, Hybrid and Consortium, along with their advantages, disadvantages and real-time applications.
+
+Assignment 5 completed
+External exam tip: The most important questions are the four blockchain types, their differences, advantages, disadvantages and examples. Learn the comparison table properly.

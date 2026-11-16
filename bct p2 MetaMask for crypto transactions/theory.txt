@@ -1,0 +1,132 @@
+Blockchain – Assignment No. 2
+External practical preparation
+Title: Create your own wallet using MetaMask for crypto transactions.
+
+Objective: To understand and explore blockchain technology and its applications by creating a cryptocurrency wallet using MetaMask.
+
+Course Outcome: CO6 – Interpret the basic concepts in Blockchain technology and its applications.
+
+This practical is mainly about creating your own MetaMask wallet. There is no programming code required.
+1. Important theory – Write in your journal
+1. Introduction to MetaMask
+MetaMask is a cryptocurrency wallet used to interact with the Ethereum blockchain.
+- It is available as a browser extension and mobile application.
+- It allows users to send and receive cryptocurrency.
+- It helps users manage ETH and ERC-20 tokens.
+- It connects users with decentralized applications (DApps).
+- It also supports NFTs.
+2. Features of MetaMask
+1. Ease of Use:
+MetaMask has a simple and user-friendly interface. Users can create a wallet easily without an email address.
+
+2. Security:
+MetaMask protects wallet information using passwords and private keys. A 12-word Secret Recovery Phrase helps recover the wallet.
+
+3. Built-in Crypto Support:
+It supports Ether (ETH) and Ethereum-based tokens such as ERC-20 tokens.
+
+4. Backup and Restore:
+Users can restore their wallets using the Secret Recovery Phrase if they change their browser or device.
+
+5. Community Support:
+MetaMask has a large user community and provides support for cryptocurrency users.
+3. Types of MetaMask Availability
+1. Browser Extension: Available for Chrome, Firefox, Brave and Edge.
+2. Mobile Application: Available for Android and iOS devices.
+4. Important Terms
+- Wallet: A digital tool used to manage cryptocurrency and blockchain accounts.
+- Password: Protects access to the wallet on a device.
+- Private Key: Secret key used to authorize transactions.
+- Seed Phrase: A 12-word recovery phrase used to restore a wallet.
+- Wallet Address: Public address used to receive cryptocurrency.
+- ERC-20: A standard used for creating tokens on Ethereum.
+2. Procedure to create a MetaMask wallet
+
+
+
+
+
+
+
+
+dummies.com
+
+
+1. Open Google Chrome browser.
+2. Visit the official MetaMask website: https://metamask.io.
+3. Download and install the MetaMask extension.
+4. Open the MetaMask extension.
+5. Click on Create a Wallet.
+6. Create a strong password for your wallet.
+7. Accept the Terms of Use.
+8. Click on Reveal Secret Words.
+9. Write down the 12-word Secret Recovery Phrase safely.
+10. Verify the Secret Recovery Phrase in the correct order.
+11. Click on Confirm.
+12. Your MetaMask wallet is successfully created.
+13. Click on Account 1 to view and copy your wallet address.
+14. Check your wallet balance.
+
+
+
+
+
+
+
+
+medium.com
+
+
+3. Wallet Recovery
+If the user changes their browser or device, the wallet can be restored.
+
+Steps:
+1. Install MetaMask on the new device.
+2. Click on Import an Existing Wallet.
+3. Enter the 12-word Secret Recovery Phrase.
+4. Create a new password.
+5. Complete the process to access the wallet.
+Note: Never share your Secret Recovery Phrase or private key with anyone.
+4. Result
+Hence, we successfully studied MetaMask and created a cryptocurrency wallet for interacting with the Ethereum blockchain.
+
+5. Important viva questions
+Question	Answer
+1. What is MetaMask?	A cryptocurrency wallet.
+2. What is the use of MetaMask?	To send, receive and manage crypto assets.
+3. What is a crypto wallet?	A tool to manage blockchain accounts and assets.
+4. What is a seed phrase?	A 12-word wallet recovery phrase.
+5. What is a private key?	A secret key used to authorize transactions.
+6. What is a public address?	An address used to receive cryptocurrency.
+7. What is Ethereum?	A blockchain platform.
+8. What is ETH?	Ethereum's native cryptocurrency.
+9. What is ERC-20?	A standard for Ethereum-based tokens.
+10. What is DApp?	Decentralized Application.
+11. Is MetaMask a hot wallet?	Yes, it is a software wallet connected to the internet.
+12. Can we recover a wallet?	Yes, using its Secret Recovery Phrase.
+13. Does MetaMask require an email?	No, creating a wallet does not require an email.
+14. What happens if we lose the seed phrase?	Wallet recovery may become impossible if no other recovery method exists.
+15. What is an NFT?	Non-Fungible Token, a unique digital asset.
+
+6. Important points to memorize
+Quick revision
+- MetaMask = Crypto wallet.
+- Ethereum = Blockchain platform.
+- ETH = Native cryptocurrency.
+- 12 words = Secret Recovery Phrase.
+- Password = Protects wallet access.
+- Public Address = Receive crypto.
+- Private Key = Authorize transactions.
+- ERC-20 = Ethereum token standard.
+- DApp = Decentralized Application.
+- NFT = Non-Fungible Token.
+
+7. Difference between Assignment 1 and Assignment 2
+This is useful because your examiner may ask why both practicals are different.
+Assignment 1	Assignment 2
+Install MetaMask.	Create your own wallet.
+Study Ether transactions.	Study wallet creation and recovery.
+Understand gas fees.	Understand seed phrase and wallet address.
+Learn sending and receiving ETH.	Learn wallet security and management.
+
+My exam tip: Assignment 1 and 2 have overlapping theory. Don't waste time memorizing the same blockchain definitions twice. Focus on wallet creation, seed phrase, private key, wallet recovery and ERC-20 for Assignment 2.

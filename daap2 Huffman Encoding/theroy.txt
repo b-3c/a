@@ -1,0 +1,156 @@
+DAA Practical 2 – Huffman Encoding
+External Practical Preparation
+ Java
+
+1. Aim
+To write a program to implement Huffman Encoding using a Greedy Strategy.
+2. Important Theory
+1. Greedy Method:
+- Greedy algorithm selects the best option available at each step.
+- It makes decisions one by one.
+- It does not change previous decisions.
+2. Huffman Encoding:
+- Huffman Encoding is a lossless data compression technique.
+- It reduces the size of data without losing information.
+- It assigns shorter codes to frequently occurring characters.
+- It assigns longer codes to less frequent characters.
+- It uses a Greedy approach.
+3. Prefix Rule:
+
+No character's code should be the starting part (prefix) of another character's code. This avoids confusion during decoding.
+
+4. Major Steps:
+1. Calculate the frequency of each character.
+2. Insert characters into a priority queue.
+3. Select two nodes having the lowest frequencies.
+4. Combine them into a new node.
+5. Repeat until one node remains.
+6. Assign 0 to the left edge and 1 to the right edge.
+7. Generate codes by traversing the tree.
+3. Algorithm
+1. Start.
+2. Read characters and their frequencies.
+3. Create a node for each character.
+4. Insert all nodes into a priority queue.
+5. Remove two nodes with minimum frequencies.
+6. Create a new node with their sum.
+7. Insert the new node into the queue.
+8. Repeat until only one node remains.
+9. Traverse the tree and assign 0 and 1.
+10. Print Huffman codes.
+11. Stop.
+Example Output:
+Enter a string: aabbbcccc
+
+Huffman Codes:
+a : 10
+b : 11
+c : 0
+
+
+Note: Huffman codes can differ when frequencies are tied. The codes above are one valid result.
+5. Simple Code Explanation
+Understand these important parts:
+
+1. Node class
+char ch;
+int freq;
+Node left, right;
+
+
+Stores character, its frequency and left/right child nodes.
+
+2. Count frequency
+freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+
+
+Counts how many times each character occurs.
+
+3. Priority Queue
+PriorityQueue<Node> pq = new PriorityQueue<>(
+    (a, b) -> a.freq - b.freq
+);
+
+
+Stores nodes in increasing order of frequency. The smallest frequency comes first.
+
+4. Select two minimum nodes
+Node left = pq.poll();
+Node right = pq.poll();
+
+
+Removes the two nodes having the lowest frequencies.
+
+5. Create parent node
+Node parent = new Node('-', left.freq + right.freq);
+parent.left = left;
+parent.right = right;
+
+
+Combines both nodes and adds their frequencies.
+
+6. Generate codes
+printCodes(root.left, code + "0");
+printCodes(root.right, code + "1");
+
+
+Adds 0 for the left side and 1 for the right side.
+
+7. Main method
+
+Takes input, counts frequencies, builds the Huffman Tree and prints the codes.
+6. Time and Space Complexity
+Complexity	Value
+Time Complexity	O(n log n)
+Space Complexity	O(n)
+
+Explanation:
+- Time: Priority Queue operations take O(log n), repeated for n characters.
+- Space: Huffman Tree and Priority Queue require O(n) memory.
+7. Flowchart
+START
+Input string and count frequencies
+Create nodes and insert into Priority Queue
+Queue size greater than 1?
+YES
+Remove two minimum nodes
+Combine nodes and insert parent
+Repeat the condition
+NO
+Generate codes (0 and 1)
+STOP
+
+
+
+8. Important Viva Questions
+Question	Answer
+What is Huffman Encoding?	Lossless data compression technique.
+Which strategy does it use?	Greedy strategy.
+Who developed Huffman Coding?	David Huffman.
+What is a priority queue?	A data structure that gives the minimum priority element first.
+What is a leaf node?	A node having no children.
+What is the prefix rule?	No code is the prefix of another code.
+Which code is given to the left edge?	0
+Which code is given to the right edge?	1
+Time complexity?	O(n log n).
+Space complexity?	O(n).
+
+9. Conclusion
+Thus, we implemented Huffman Encoding using the Greedy Method to generate variable-length codes for data compression.
+
+Last-minute memory trick
+
+Remember the main logic:
+1. Count frequency.
+2. Insert into Priority Queue.
+3. Remove two minimum nodes.
+4. Add their frequencies.
+5. Repeat until one node remains.
+6. Left = 0, Right = 1.
+Most important complexity: O(n log n)
+
+
+javac HuffmanNode.java
+java HuffmanNode
+
+Exam tip: In this practical, focus on remembering PriorityQueue, poll(), add(), and the recursive printCodes() method. These are the most important parts of the implementation.

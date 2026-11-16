@@ -1,0 +1,203 @@
+Diabetes Prediction using K-Nearest Neighbors (KNN)
+Your uploaded Assignment No. 4 is about predicting whether a patient has diabetes using the K-Nearest Neighbors (KNN) algorithm. I'll explain it in simple language, with Colab-ready code, code explanations, results, and viva questions.
+Pasted text(2).txt
+1. Aim
+Implement the K-Nearest Neighbors algorithm on the diabetes.csv dataset and calculate:
+1. Confusion Matrix
+2. Accuracy
+3. Error Rate
+4. Precision
+5. Recall
+2. Theory in simple words
+What is diabetes prediction?
+
+We use patient medical information to predict whether a patient has diabetes or not.
+
+The dataset contains 8 input features:
+Feature	Meaning
+Pregnancies	Number of pregnancies
+Glucose	Glucose level
+BloodPressure	Blood pressure
+SkinThickness	Skin thickness
+Insulin	Insulin level
+BMI	Body Mass Index
+DiabetesPedigreeFunction	Diabetes-related family history score
+Age	Patient's age
+Outcome	0 = No diabetes, 1 = Diabetes
+
+What is KNN?
+
+KNN stands for K-Nearest Neighbors. It is a supervised machine learning classification algorithm.
+
+It checks the nearest data points and predicts the class based on majority voting.
+
+Example:
+
+If K = 5 and the nearest patients have:
+- 3 patients without diabetes
+- 2 patients with diabetes
+The model predicts No Diabetes (0) because that is the majority.
+
+What is K?
+
+K represents the number of nearest neighbors considered for prediction.
+Explanation of the code
+Code	Simple explanation
+import pandas as pd	Loads the Pandas library to handle data.
+import matplotlib.pyplot as plt	Used to display graphs.
+import seaborn as sns	Used to create attractive graphs.
+train_test_split	Divides data into training and testing sets.
+StandardScaler	Brings features to a similar scale.
+KNeighborsClassifier	Imports the KNN algorithm.
+pd.read_csv()	Reads the CSV dataset.
+df.head()	Displays the first five records.
+df.shape	Displays the number of rows and columns.
+df.isnull().sum()	Checks missing values.
+X	Stores input features.
+y	Stores the target/output column.
+test_size=0.30	Uses 30% data for testing and 70% for training.
+random_state=42	Makes the data split reproducible.
+StandardScaler()	Creates the scaling object.
+fit_transform()	Learns scaling values from training data and scales it.
+transform()	Scales testing data using the training values.
+n_neighbors=7	Considers the 7 nearest neighbors.
+knn.fit()	Trains the model.
+knn.predict()	Predicts diabetes outcomes.
+confusion_matrix()	Shows correct and incorrect predictions.
+accuracy_score()	Calculates the accuracy.
+precision_score()	Measures how many predicted diabetes cases were actually diabetes cases.
+recall_score()	Measures how many actual diabetes cases were correctly identified.
+
+5. Evaluation metrics
+Confusion Matrix
+
+It compares actual results with predicted results.
+Example confusion matrix from your assignment
+123
+True Negative (TN)
+Correctly predicted no diabetes
+
+28
+False Positive (FP)
+Predicted diabetes, actually no diabetes
+
+37
+False Negative (FN)
+Predicted no diabetes, actually diabetes
+
+43
+True Positive (TP)
+Correctly predicted diabetes
+
+
+Matrix layout: [[TN, FP], [FN, TP]]
+
+Accuracy: Percentage of all predictions that are correct.
+\[
+Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
+\]
+
+Error Rate: Percentage of incorrect predictions.
+\[
+Error\ Rate=1-Accuracy
+\]
+
+Precision: Out of all patients predicted as diabetic, how many actually have diabetes?
+\[
+Precision=\frac{TP}{TP+FP}
+\]
+
+Recall: Out of all actual diabetic patients, how many did the model correctly identify?
+\[
+Recall=\frac{TP}{TP+FN}
+\]
+
+6. Results from your assignment
+The scanned practical contains these results for KNN with K = 7:
+Evaluation	Result
+Accuracy	71.86%
+Error Rate	28.14%
+Precision	60.56%
+Recall	53.75%
+Confusion Matrix	[[123, 28], [37, 43]]
+
+These are the results printed in your supplied practical. Your Colab output may differ if the dataset split or preprocessing is different. Pasted text(2).txt
+
+7. Important viva questions and answers
+Q1. What is KNN?
+
+KNN stands for K-Nearest Neighbors. It is a supervised machine learning classification algorithm.
+
+Q2. What is supervised learning?
+
+Learning from data that already contains input values and their correct output labels.
+
+Q3. What is K in KNN?
+
+K represents the number of nearest neighbors used for prediction.
+
+Q4. Why do we use KNN?
+
+To classify new data based on the classes of nearby data points.
+
+Q5. What is classification?
+
+Classification means predicting a category, such as 0 or 1.
+
+Q6. What is the target variable in this dataset?
+
+Outcome. It represents whether a patient has diabetes or not.
+
+Q7. What does 0 represent?
+
+The patient does not have diabetes.
+
+Q8. What does 1 represent?
+
+The patient has diabetes.
+
+Q9. Why do we split the dataset?
+
+To train the model on one part and test its performance on unseen data.
+
+Q10. What is StandardScaler?
+
+It standardizes features so that they have a similar scale.
+
+Q11. What is a confusion matrix?
+
+A table that compares actual predictions with predicted results.
+
+Q12. What is precision?
+
+The proportion of predicted positive cases that are actually positive.
+
+Q13. What is recall?
+
+The proportion of actual positive cases correctly identified.
+
+Q14. What is error rate?
+
+The percentage of incorrect predictions.
+
+Q15. What is cross-validation?
+
+A technique that divides data into multiple groups and tests the model repeatedly using different groups.
+
+Q16. What is GridSearchCV?
+
+It tests different parameter values and finds the best-performing parameter using cross-validation.
+
+Q17. Why use K = 7?
+
+It considers the seven nearest data points when predicting a new patient's class.
+
+Q18. Which library is used for KNN?
+
+Scikit-learn.
+8. Remember these five things for your practical
+1. X = Input features.
+2. y = Output/target.
+3. fit() = Train the model.
+4. predict() = Make predictions.
+5. accuracy_score() = Calculate accuracy.

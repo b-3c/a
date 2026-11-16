@@ -1,0 +1,529 @@
+ml p-1
+
+Experiment: Predict the price of an Uber ride from pickup location to drop-off location using Linear Regression and Random Forest Regression.
+
+I have used your college practical as the source. I am keeping all the important topics, steps, algorithms and functionality, but simplifying the language and code so you can write it in your practical exam.
+1. Theory – write in your practical sheet
+Aim
+To predict Uber ride fare using Machine Learning by preprocessing the dataset, identifying outliers, checking correlation and implementing Linear Regression and Random Forest Regression.
+Objectives
+1. Perform data preprocessing.
+2. Identify and handle outliers.
+3. Check correlation between variables.
+4. Implement Linear Regression.
+5. Implement Random Forest Regression.
+6. Evaluate models using R², MSE and RMSE.
+1. Data Preprocessing
+Data preprocessing is the process of cleaning and converting raw data into a suitable format for Machine Learning.
+
+Why is it required?
+- To handle missing values.
+- To remove unwanted data.
+- To handle incorrect values.
+- To improve model accuracy and efficiency.
+Steps:
+1. Import dataset.
+2. Import required libraries.
+3. Check missing values.
+4. Handle missing values.
+5. Remove unwanted columns.
+6. Identify and handle outliers.
+7. Split data into training and testing sets.
+2. Linear Regression
+Linear Regression is a supervised Machine Learning algorithm used to predict continuous numerical values.
+
+It shows a linear relationship between dependent and independent variables.
+
+Example: Predicting Uber fare based on travel distance.
+- X = Independent variable (input).
+- Y = Dependent variable (output/fare).
+Formula:
+\[
+Y = mX + C
+\]
+
+Where:
+- Y = Predicted value
+- X = Input value
+- m = Slope
+- C = Intercept
+3. Random Forest Regression
+Random Forest is a supervised Machine Learning algorithm used for classification and regression.
+
+It works using multiple Decision Trees and combines their predictions to produce the final output.
+
+Working:
+1. Creates multiple subsets of training data.
+2. Builds multiple Decision Trees.
+3. Each tree predicts the output.
+4. Takes the average of predictions for regression.
+5. Produces the final prediction.
+Advantages:
+- High accuracy.
+- Reduces overfitting.
+- Works with complex datasets.
+4. Box Plot
+A Box Plot is a graphical representation used to understand the distribution of data and identify outliers.
+
+It represents:
+- Minimum value.
+- First quartile (Q1).
+- Median (Q2).
+- Third quartile (Q3).
+- Maximum value.
+5. Outliers
+Outliers are data points that are significantly different from the other values in a dataset.
+
+Types of outliers:
+1. Global Outlier: A single data point that differs from all other points.
+2. Collective Outlier: A group of data points that behaves differently from the remaining data.
+3. Contextual Outlier: A data point that is abnormal under a particular condition or context.
+IQR method:
+\[
+IQR = Q3-Q1
+\]
+
+\[
+Lower = Q1-1.5(IQR)
+\]
+
+\[
+Upper = Q3+1.5(IQR)
+\]
+
+6. Haversine Formula
+The Haversine formula calculates the shortest distance between two points on the Earth's surface using latitude and longitude.
+
+It is used in navigation and calculating Uber ride distance.
+7. Matplotlib
+Matplotlib is a Python visualization library used to create graphs and charts.
+
+Examples:
+- Line graph.
+- Bar graph.
+- Scatter plot.
+- Histogram.
+- Box plot.
+8. Mean Squared Error (MSE)
+MSE measures the average squared difference between actual and predicted values.
+\[
+MSE = \frac{1}{n}\sum (Actual-Predicted)^2
+\]
+
+- Lower MSE means better prediction.
+- Zero MSE means perfect prediction.
+Important evaluation metrics
+Metric	Meaning
+R² Score	Measures how well the model predicts values. Higher is better.
+MSE	Average squared prediction error. Lower is better.
+RMSE	Square root of MSE. Lower is better.
+Q1. What is Machine Learning?
+
+Machine Learning is a branch of AI that allows computers to learn from data and make predictions.
+
+Q2. What is Pandas?
+
+Pandas is a Python library used for data manipulation and analysis.
+
+Q3. What is NumPy?
+
+NumPy is a Python library used for numerical calculations and arrays.
+
+Q4. What is Seaborn?
+
+Seaborn is a Python library used for statistical data visualization.
+
+Q5. What is Scikit-learn?
+
+It is a Python library used to implement Machine Learning algorithms.
+
+Q6. What is training data?
+
+Data used to train the Machine Learning model.
+
+Q7. What is testing data?
+
+Data used to check the performance of the trained model.
+
+Q8. What is correlation?
+
+Correlation measures the relationship between two variables. Its value ranges from -1 to +1.
+
+Q9. What is IQR?
+
+IQR is the difference between the third quartile and first quartile.
+
+Q10. What is Haversine used for?
+
+To calculate geographical distance using latitude and longitude.
+
+Q11. Which algorithm is used for prediction?
+
+Linear Regression and Random Forest Regression.
+
+Q12. Which model is better?
+
+Generally, Random Forest can perform better because it combines multiple decision trees. However, the actual performance depends on the dataset.
+4. Understand these important code statements
+Code	Purpose
+pd.read_csv()	Loads dataset
+df.head()	Displays first five rows
+df.info()	Shows dataset information
+df.isnull().sum()	Finds missing values
+fillna()	Fills missing values
+drop()	Removes columns
+clip()	Handles extreme values
+haversine()	Calculates distance
+sns.heatmap()	Displays correlation
+train_test_split()	Splits training and testing data
+fit()	Trains model
+predict()	Predicts output
+r2_score()	Calculates R²
+mean_squared_error()	Calculates MSE
+np.sqrt()	Calculates RMSE from MSE
+
+5. Results to remember
+Your original practical records these Random Forest results:
+Metric	Recorded value
+R² Score	0.7966
+MSE	6.0362
+RMSE	2.4569
+
+These are the results from your supplied practical, not guaranteed outputs of the cleaned-up code. Pasted text.txt
+
+6. Conclusion – write in practical
+Successfully performed data preprocessing, identified and handled outliers, calculated Uber ride distance using the Haversine formula, checked correlation and implemented Linear Regression and Random Forest Regression models to predict Uber fares. Evaluated the models using R², MSE and RMSE.
+
+Last-minute revision – remember these 8 things
+1. Pandas – Data handling.
+2. NumPy – Numerical calculations.
+3. Matplotlib – Graphs.
+4. IQR – Outlier detection.
+5. Haversine – Distance calculation.
+6. Linear Regression – Straight-line prediction.
+7. Random Forest – Multiple decision trees.
+8. R², MSE, RMSE – Model evaluation.
+
+Practical 1: Uber Fare Prediction – Code Explanation
+Experiment: Predict the price of an Uber ride using Linear Regression and Random Forest Regression.
+
+I'll explain each section in simple English, with what it does and why we use it. This will help you understand and explain the code in your external practical exam.
+1. Import libraries
+import pandas as pdimport numpy as npimport matplotlib.pyplot as pltimport seaborn as snsfrom haversine import haversinefrom sklearn.model_selection import train_test_splitfrom sklearn.linear_model import LinearRegressionfrom sklearn.ensemble import RandomForestRegressorfrom sklearn.metrics import r2_score, mean_squared_error
+
+
+
+Explanation:
+- pandas: Used to read and manage the dataset in table format.
+- numpy: Used for mathematical calculations.
+- matplotlib.pyplot: Used to draw graphs.
+- seaborn: Used to create attractive graphs like heatmaps.
+- haversine: Calculates the distance between two geographical locations.
+- train_test_split: Divides data into training and testing parts.
+- LinearRegression: Imports the Linear Regression algorithm.
+- RandomForestRegressor: Imports the Random Forest algorithm.
+- r2_score: Measures model performance.
+- mean_squared_error: Calculates prediction error.
+Why? We import these libraries because they provide ready-made functions for data processing, visualization, model training and evaluation.
+2. Load dataset
+df = pd.read_csv("uber.csv")
+
+
+
+- pd.read_csv() reads the CSV file.
+- "uber.csv" is our dataset file.
+- df stores the dataset in a DataFrame (table).
+Why? To load Uber ride information into Python so we can work with it.
+
+In Google Colab, if you uploaded the file, you can also use pd.read_csv("/content/uber.csv").
+3. Remove unwanted columns
+df.drop(['Unnamed: 0', 'key'], axis=1,        inplace=True, errors='ignore')
+
+
+
+- drop() removes unwanted columns.
+- Unnamed: 0 and key are not required for fare prediction.
+- axis=1 means we are removing columns.
+- inplace=True directly updates the original dataset.
+- errors='ignore' avoids an error if a column does not exist.
+Why? To remove unnecessary information and keep useful data.
+4. Handle missing values
+df['pickup_datetime'] = pd.to_datetime(    df['pickup_datetime'], errors='coerce')df.dropna(subset=['pickup_datetime'], inplace=True)for col in ['dropoff_latitude', 'dropoff_longitude']:    df[col] = df[col].fillna(df[col].median())
+
+
+
+Explanation:
+- pd.to_datetime() converts pickup date and time into proper date-time format.
+- errors='coerce' converts invalid date values into missing values (NaT).
+- dropna() removes rows where pickup date/time is missing.
+- for col loops through the two selected columns.
+- fillna() fills missing values.
+- median() calculates the middle value of the column.
+Why? Missing or invalid values can affect the accuracy of our machine learning model.
+5. Extract date and time
+df['hour'] = df.pickup_datetime.dt.hourdf['day'] = df.pickup_datetime.dt.daydf['month'] = df.pickup_datetime.dt.monthdf['year'] = df.pickup_datetime.dt.yeardf['dayofweek'] = df.pickup_datetime.dt.dayofweekdf.drop('pickup_datetime', axis=1, inplace=True)
+
+
+
+We extract useful information from the pickup date and time.
+Code	Meaning
+dt.hour	Pickup hour
+dt.day	Day of the month
+dt.month	Month
+dt.year	Year
+dt.dayofweek	Day of the week (Monday = 0)
+
+Finally, drop() removes the original pickup_datetime column.
+
+Why? The model can use hour, day and month as separate numerical features to understand how time affects Uber fares.
+6. Remove invalid coordinates
+df = df[    df.pickup_latitude.between(-90, 90) &    df.dropoff_latitude.between(-90, 90) &    df.pickup_longitude.between(-180, 180) &    df.dropoff_longitude.between(-180, 180)].copy()
+
+
+
+Explanation:
+- Latitude must be between -90 and 90.
+- Longitude must be between -180 and 180.
+- between() checks whether a value is within the given range.
+- & means AND (all conditions must be true).
+- .copy() creates a separate copy of the filtered data.
+Why? To remove invalid geographical coordinates.
+7. Calculate Haversine distance
+df['dist_travel_km'] = df.apply(    lambda r: haversine(        (r.pickup_latitude, r.pickup_longitude),        (r.dropoff_latitude, r.dropoff_longitude)    ), axis=1)
+
+
+
+Explanation:
+- apply() applies a function to each row.
+- lambda r represents one row of the dataset.
+- haversine() calculates the distance between pickup and drop-off locations.
+- axis=1 means the function works row by row.
+- dist_travel_km stores the calculated distance in kilometres.
+Why? Distance is an important factor affecting Uber ride fare.
+8. Remove invalid fares and distances
+df = df[    (df.fare_amount > 0) &    (df.dist_travel_km >= 1) &    (df.dist_travel_km <= 130) &    (df.passenger_count > 0)].copy()
+
+
+
+Explanation:
+
+This code keeps only valid records:
+- Fare must be greater than zero.
+- Distance must be at least 1 km.
+- Distance must not exceed 130 km.
+- Passenger count must be greater than zero.
+Why? To remove incorrect or unrealistic ride records.
+9. Handle outliers using IQR
+Q1 = df['fare_amount'].quantile(0.25)Q3 = df['fare_amount'].quantile(0.75)IQR = Q3 - Q1df['fare_amount'] = df['fare_amount'].clip(    Q1 - 1.5*IQR, Q3 + 1.5*IQR)
+
+
+
+Explanation:
+- Q1: First quartile (25% of values are below it).
+- Q3: Third quartile (75% of values are below it).
+- IQR: Difference between Q3 and Q1.
+- clip(): Limits values to the calculated lower and upper boundaries.
+Formula:
+\[
+IQR = Q3-Q1
+\]
+
+\[
+Lower=Q1-1.5\times IQR
+\]
+
+\[
+Upper=Q3+1.5\times IQR
+\]
+
+Why? To reduce the effect of unusually high or low fare values on model training.
+10. Display boxplot
+df[['fare_amount', 'dist_travel_km']].plot(    kind='box', subplots=True)plt.show()
+
+
+
+- box: Creates a boxplot.
+- fare_amount: Displays fare distribution.
+- dist_travel_km: Displays distance distribution.
+- subplots=True: Creates separate plots.
+- plt.show(): Displays the graphs.
+Why? To visualize the data distribution and identify possible outliers.
+
+
+
+
+
+
+
+
+
+
+11. Check correlation
+sns.heatmap(df.corr(numeric_only=True), annot=True)plt.show()
+
+
+
+- corr() calculates the correlation between numerical columns.
+- Correlation shows how two variables are related.
+- numeric_only=True considers only numerical columns.
+- heatmap() displays correlation using colours.
+- annot=True displays numerical correlation values.
+- plt.show() displays the graph.
+Why? To understand which variables are related to Uber fare.
+
+
+
+
+
+
+
+
+
+
+Remember:
+- Correlation close to +1 = strong positive relationship.
+- Correlation close to -1 = strong negative relationship.
+- Correlation close to 0 = weak linear relationship.
+12. Select input and output
+X = df.drop(['fare_amount'], axis=1)y = df['fare_amount']
+
+
+
+- X contains input features such as distance, location, passenger count and time.
+- y contains the output we want to predict: fare_amount.
+- drop() removes the fare column from the input data.
+Why? The model learns from X and predicts y.
+
+Remember: X = Input, y = Output.
+13. Split dataset
+X_train, X_test, y_train, y_test = train_test_split(    X, y, test_size=0.2, random_state=42)
+
+
+
+- train_test_split() divides the dataset.
+- test_size=0.2 means 20% data is used for testing and 80% for training.
+- random_state=42 ensures the same split when we run the code again.
+Why? Training data teaches the model, while testing data checks how well it predicts unseen data.
+14. Linear Regression
+lr = LinearRegression()lr.fit(X_train, y_train)pred1 = lr.predict(X_test)
+
+
+
+- LinearRegression() creates a Linear Regression model.
+- fit() trains the model using training data.
+- predict() predicts Uber fares using testing inputs.
+- pred1 stores predicted fares.
+Why? Linear Regression learns the relationship between input features and fare using a linear equation.
+\[
+Y=mX+C
+\]
+
+Here, Y is predicted fare, X is input, m is slope and C is intercept.
+15. Random Forest Regression
+rf = RandomForestRegressor(    n_estimators=100, random_state=42)rf.fit(X_train, y_train)pred2 = rf.predict(X_test)
+
+
+
+- RandomForestRegressor() creates a Random Forest model.
+- n_estimators=100 means it uses 100 decision trees.
+- random_state=42 makes results reproducible.
+- fit() trains the model.
+- predict() predicts fares.
+- pred2 stores predicted fares.
+Why? Random Forest combines predictions from multiple decision trees to predict the fare. It can learn more complex relationships in the data.
+16. Evaluate both models
+for name, pred in [('Linear Regression', pred1),                   ('Random Forest', pred2)]:    mse = mean_squared_error(y_test, pred)    rmse = np.sqrt(mse)    r2 = r2_score(y_test, pred)    print(name)    print("R2 Score:", r2)    print("MSE:", mse)    print("RMSE:", rmse)
+
+
+
+This code checks how accurately both models predict Uber fares.
+
+Explanation:
+- for name, pred: Runs the evaluation for each model.
+- mean_squared_error(): Calculates the average squared prediction error.
+- np.sqrt(mse): Calculates RMSE by taking the square root of MSE.
+- r2_score(): Calculates how well the model explains the variation in actual fares.
+- print(): Displays the results.
+Three evaluation metrics:
+Metric	Meaning	Better result
+R² Score	Measures model fit	Higher, closer to 1
+MSE	Average squared error	Lower
+RMSE	Square root of MSE	Lower
+
+
+Important viva questions
+1. What is the aim of this practical?
+
+To predict Uber ride fares using Linear Regression and Random Forest Regression.
+
+2. What is a dataset?
+
+A collection of data arranged in rows and columns.
+
+3. What is preprocessing?
+
+Cleaning and preparing raw data before giving it to a machine learning model.
+
+4. What are outliers?
+
+Values that are unusually high or low compared with other values.
+
+5. What is IQR?
+
+IQR means Interquartile Range. It is the difference between Q3 and Q1.
+
+6. What is Haversine?
+
+It is a method used to calculate geographical distance between two latitude and longitude points.
+
+7. What is Linear Regression?
+
+A supervised machine learning algorithm used to predict continuous numerical values.
+
+8. What is Random Forest?
+
+A machine learning algorithm that combines multiple decision trees to make predictions.
+
+9. What is the difference between training and testing data?
+
+Training data teaches the model. Testing data checks its performance.
+
+10. Which model is better?
+
+The model with a higher R² score and lower MSE and RMSE is generally better.
+
+11. What is a heatmap?
+
+A graphical representation of numerical values using colours.
+
+12. What is the purpose of a boxplot?
+
+To visualize data distribution and identify outliers.
+
+Final practical flow – Remember this order
+1. Import Libraries
+
+2. Load Uber Dataset
+
+3. Data Preprocessing
+
+4. Extract Date and Time
+
+5. Calculate Distance
+
+6. Handle Outliers
+
+7. Visualize Data (Boxplot + Heatmap)
+
+8. Select X and y
+
+9. Split Training and Testing Data
+
+10. Train Linear Regression
+
+11. Train Random Forest
+
+12. Evaluate Both Models
+
+
+Exam tip: Understand these five important concepts especially well: Data Preprocessing, IQR, Haversine Distance, Linear Regression and Random Forest. They explain the main working of your practical.

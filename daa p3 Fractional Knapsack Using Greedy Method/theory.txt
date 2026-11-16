@@ -1,0 +1,136 @@
+DAA Practical 3 – Fractional Knapsack Using Greedy Method
+External Practical Preparation
+ Java
+
+1. Aim
+To write a program to solve the Fractional Knapsack Problem using the Greedy Method.
+2. Important Theory
+1. Greedy Method:
+- Greedy algorithm selects the best option at each step.
+- It makes decisions based on the current best choice.
+- It does not change previous decisions.
+2. Knapsack Problem:
+- A knapsack is a bag with limited weight capacity.
+- Each item has a weight and a value (profit).
+- The objective is to get maximum profit without exceeding the capacity.
+3. Fractional Knapsack:
+- Items can be divided into fractions.
+- We can take a complete item or a part of an item.
+- It is solved using the Greedy Method.
+4. Steps of Fractional Knapsack:
+1. Calculate the value/weight ratio of each item.
+2. Sort items in decreasing order of ratio.
+3. Select the item with the highest ratio first.
+4. Add the complete item if capacity is available.
+5. Otherwise, take the required fraction.
+6. Calculate the total profit.
+5. Difference between Fractional and 0/1 Knapsack
+Fractional Knapsack	0/1 Knapsack
+Items can be divided.	Items cannot be divided.
+Fractions are allowed.	Only complete items are allowed.
+Uses Greedy Method.	Usually uses Dynamic Programming for optimal solutions.
+Based on value/weight ratio.	Ratio-based greedy is not always optimal.
+Example Input
+Enter number of items: 3
+Enter weight and value: 10 60
+Enter weight and value: 20 100
+Enter weight and value: 30 120
+Enter knapsack capacity: 50
+
+
+Output:
+Maximum Profit = 240.0
+
+
+4. Simple Code Explanation
+1. Item class
+int weight, value;
+double ratio;
+
+
+Stores item weight, value and value/weight ratio.
+
+2. Calculate ratio
+ratio = (double) v / w;
+
+
+Calculates the profit per unit of weight.
+
+3. Sorting
+Arrays.sort(items,
+    (a, b) -> Double.compare(b.ratio, a.ratio));
+
+
+Arranges items from highest ratio to lowest ratio.
+
+4. Complete item
+if (items[i].weight <= capacity) {
+    profit += items[i].value;
+    capacity -= items[i].weight;
+}
+
+
+If the item fits, take the complete item and add its value to profit.
+
+5. Fractional item
+else {
+    profit += items[i].ratio * capacity;
+    capacity = 0;
+}
+
+
+If the item does not fit, take only the required fraction and calculate its profit.
+
+6. Main method
+
+Takes input, sorts items, selects items and displays maximum profit.
+5. Time and Space Complexity
+Complexity	Value
+Time Complexity	O(n log n)
+Space Complexity	O(n)
+
+Explanation:
+- Time: Sorting items takes O(n log n) time.
+- Space: We store n items in an array, requiring O(n) space.
+6. Flowchart
+START
+Input items and capacity
+Calculate value / weight ratio
+Sort items in decreasing ratio
+Capacity greater than 0?
+YES
+Check item weight
+Take full item or required fraction
+Update profit and capacity
+Repeat for next item
+NO
+Print maximum profit
+STOP
+
+
+
+7. Important Viva Questions
+Question	Answer
+What is Greedy Method?	Selecting the best option at each step.
+What is Knapsack Problem?	Selecting items to maximize profit within capacity.
+What is Fractional Knapsack?	Items can be divided into fractions.
+Which method is used?	Greedy Method.
+What is the ratio formula?	Value / Weight.
+Which item is selected first?	Item with highest ratio.
+Can we take half an item?	Yes.
+What is 0/1 Knapsack?	Items are either fully selected or rejected.
+Time complexity?	O(n log n).
+Space complexity?	O(n).
+
+8. Conclusion
+Thus, we implemented the Fractional Knapsack Problem using the Greedy Method and calculated the maximum profit.
+
+Last-minute revision – Remember these 5 points
+1. Formula = Value / Weight.
+2. Sort in decreasing order.
+3. Select highest ratio first.
+4. Take full item or fraction.
+5. Complexity = O(n log n).
+Most important: Ratio + Sorting + Fraction
+
+Exam tip: Remember the two main Java functions: Arrays.sort() for sorting and profit += items[i].ratio * capacity for taking a fraction. These are the most important logic parts of this practical.

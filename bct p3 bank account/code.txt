@@ -1,0 +1,58 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Banking {
+
+    mapping(address => uint) public user_account;
+    mapping(address => bool) public user_exists;
+
+    function create_account() public payable {
+        require(!user_exists[msg.sender], "Account already exists");
+        user_exists[msg.sender] = true;
+        user_account[msg.sender] = msg.value;
+    }
+
+    function deposit() public payable {
+        require(user_exists[msg.sender], "Create account first");
+        require(msg.value > 0, "Enter amount");
+        user_account[msg.sender] += msg.value;
+    }
+
+    function withdraw(uint amount) public {
+        require(user_exists[msg.sender], "Account not found");
+        require(amount > 0, "Invalid amount");
+        require(user_account[msg.sender] >= amount, "Insufficient balance");
+
+        user_account[msg.sender] -= amount;
+        (bool success, ) = payable(msg.sender).call{value: amount}("");
+        require(success, "Withdrawal failed");
+    }
+
+    function transfer_amount(address to, uint amount) public {
+        require(user_exists[msg.sender], "Account not found");
+        require(user_exists[to], "Receiver not found");
+        require(amount > 0, "Invalid amount");
+        require(user_account[msg.sender] >= amount, "Insufficient balance");
+
+        user_account[msg.sender] -= amount;
+        user_account[to] += amount;
+    }
+
+    function send_amount(address payable to, uint amount) public {
+        require(user_exists[msg.sender], "Account not found");
+        require(amount > 0, "Invalid amount");
+        require(user_account[msg.sender] >= amount, "Insufficient balance");
+
+        user_account[msg.sender] -= amount;
+        (bool success, ) = to.call{value: amount}("");
+        require(success, "Transfer failed");
+    }
+
+    function user_balance() public view returns (uint) {
+        return user_account[msg.sender];
+    }
+
+    function account_exist() public view returns (bool) {
+        return user_exists[msg.sender];
+    }
+}

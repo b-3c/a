@@ -1,0 +1,144 @@
+Blockchain – Assignment No. 3
+Important coding practical
+ Solidity + Remix IDE
+
+
+Title: Write a smart contract on a test network for a bank account of a customer for the following operations:
+1. Deposit Money
+2. Withdraw Money
+3. Show Balance
+Objective: To understand and explore the working of blockchain technology and its applications.
+
+Course Outcome: CO6 – Interpret the basic concepts in Blockchain technology and its applications.
+
+For this practical, I have simplified your original code while keeping all the main banking operations: Create Account, Deposit, Withdraw, Transfer, Send Amount and Show Balance.
+
+I have also removed unnecessary repeated conditions and extra functions.
+1. Important theory – Write in your journal
+1. Smart Contract
+A smart contract is a self-executing digital contract stored on a blockchain. It automatically executes predefined instructions when certain conditions are satisfied.
+- It works on the If-Then principle.
+- It does not require an intermediary.
+- It is secure and transparent.
+- Once deployed, its code is difficult to change.
+- It is commonly written in Solidity.
+2. Solidity
+Solidity is a high-level, object-oriented programming language used to develop smart contracts on Ethereum blockchain.
+
+Features:
+- Used to create smart contracts.
+- Supports functions and variables.
+- Supports automatic execution of conditions.
+- Used in voting, banking and cryptocurrency applications.
+3. Remix IDE
+Remix IDE is an online development environment used to write, compile, test and deploy Solidity smart contracts.
+
+Website: https://remix.ethereum.org
+
+Steps to execute a smart contract:
+1. Open Remix IDE.
+2. Create a new Solidity file with .sol extension.
+3. Write the smart contract code.
+4. Open the Solidity Compiler.
+5. Select the compatible compiler version.
+6. Click Compile.
+7. Open Deploy and Run Transactions.
+8. Select the environment and account.
+9. Click Deploy.
+10. Execute the required functions.
+
+imple explanation of code
+Code	Meaning
+pragma solidity ^0.8.20;	Specifies Solidity version.
+contract Banking	Creates a banking smart contract.
+mapping	Stores user addresses and balances.
+create_account()	Creates a new bank account.
+deposit()	Adds ETH to the user's balance.
+withdraw()	Withdraws ETH from the account.
+transfer_amount()	Transfers balance between two registered accounts internally.
+send_amount()	Sends actual ETH to another address.
+user_balance()	Displays the user's balance.
+account_exist()	Checks whether the account exists.
+require()	Checks conditions before execution.
+msg.sender	Address of the person calling the function.
+msg.value	Amount of ETH sent with the transaction.
+payable	Allows a function or address to receive ETH.
+view	Reads data without modifying blockchain state.
+
+Important difference:
+- transfer_amount() changes the balances stored in the contract.
+- send_amount() sends actual ETH from the contract to the receiver's address.
+4. Steps to execute in Remix IDE
+
+
+
+
+
+
+
+
+rareskills.io
+
+
+1. Open https://remix.ethereum.org.
+2. Click on File Explorer.
+3. Create a new file named Banking.sol.
+4. Paste the above Solidity code.
+5. Open Solidity Compiler.
+6. Select compiler version 0.8.20 or compatible.
+7. Click Compile Banking.sol.
+8. Open Deploy & Run Transactions.
+9. Select Remix VM for practice or an injected wallet connected to a test network such as Sepolia.
+10. Click Deploy.
+11. Expand the deployed Banking contract.
+12. Execute the functions and check their outputs.
+5. Sample operations and output
+Operation	Input / Action	Expected result
+Create Account	Click create_account	Account created
+Deposit	Send 5 ETH using Value field	Balance increases
+Show Balance	Click user_balance	Displays balance
+Check Account	Click account_exist	Returns true
+Withdraw	Enter amount in wei	Balance decreases
+Transfer	Enter receiver address and amount	Receiver balance increases
+Send Amount	Enter receiver address and amount	ETH sent to receiver
+
+Important: Enter amounts in Wei in the function arguments. For example:
+- 1 ETH = 1,000,000,000,000,000,000 Wei.
+- 0.1 ETH = 100,000,000,000,000,000 Wei.
+For deposit() and create_account(), select the ETH amount in the Remix Value field before clicking the function.
+6. Important viva questions
+Question	Answer
+1. What is a smart contract?	A self-executing program on blockchain.
+2. Which language is used?	Solidity.
+3. What is Remix IDE?	Online IDE for writing and deploying smart contracts.
+4. What is mapping?	A data structure that stores key-value pairs.
+5. What is msg.sender?	Address of the function caller.
+6. What is msg.value?	ETH sent with a transaction.
+7. What is require()?	Checks conditions before execution.
+8. What is payable?	Allows a function to receive ETH.
+9. What is uint?	An unsigned integer.
+10. What is view?	Reads data without changing blockchain state.
+11. What is deploy?	Publishing a smart contract on a blockchain.
+12. What is Wei?	Smallest unit of Ether.
+13. What is a test network?	A blockchain network used for testing without real funds.
+14. What is a mapping address?	An address used as a key to access stored data.
+15. What happens if balance is insufficient?	The transaction is rejected.
+
+7. Quick revision before practical
+Remember these 10 points
+1. Smart Contract = Automatic blockchain program.
+2. Solidity = Smart contract language.
+3. Remix = Online IDE.
+4. Mapping = Stores user balances.
+5. msg.sender = Caller address.
+6. msg.value = ETH sent.
+7. payable = Receives ETH.
+8. require() = Checks conditions.
+9. withdraw() = Removes ETH.
+10. user_balance() = Shows balance.
+
+8. Result
+Hence, successfully created, compiled and deployed a Banking Smart Contract using Solidity in Remix IDE and performed deposit, withdrawal, transfer and balance-checking operations.
+
+Assignment 3 completed
+One important exam tip: Understand the difference between transfer_amount() and send_amount(), and remember that the amount entered in Solidity function arguments is in Wei. These are good questions for an external examiner.

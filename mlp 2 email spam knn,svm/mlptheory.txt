@@ -1,0 +1,382 @@
+Assignment No. 2 – Email Spam Detection Using KNN and SVM
+This is your second Machine Learning practical. I'll prepare it in the same exam-friendly format as Practical 1: simple theory, corrected and simplified code, explanation of every section, and viva questions.
+
+Experiment: Classify emails into two categories using K-Nearest Neighbors (KNN) and Support Vector Machine (SVM).
+- 0 = Normal email (Not Spam)
+- 1 = Abnormal email (Spam)
+1. Theory – Write in your practical book
+Aim
+To classify emails as Spam or Not Spam using Binary Classification by implementing K-Nearest Neighbors and Support Vector Machine algorithms and analyzing their performance.
+Objectives
+1. Perform data preprocessing.
+2. Understand binary classification.
+3. Implement K-Nearest Neighbors.
+4. Implement Support Vector Machine.
+5. Split the dataset into training and testing data.
+6. Evaluate and compare model performance.
+1. Data Preprocessing
+Data preprocessing is the process of cleaning and converting raw data into a suitable format for machine learning.
+
+Why is it required?
+- To handle missing values.
+- To remove unwanted data.
+- To convert data into a suitable format.
+- To improve model performance and efficiency.
+Main steps include:
+1. Importing libraries.
+2. Loading the dataset.
+3. Selecting input and output columns.
+4. Feature scaling.
+5. Splitting data into training and testing sets.
+2. Binary Classification
+Binary classification is a machine learning technique used to classify data into two different categories.
+
+In email spam detection:
+- 0 – Normal email (Not Spam).
+- 1 – Abnormal email (Spam).
+The model studies previous emails and predicts whether a new email is spam or not spam.
+3. K-Nearest Neighbors (KNN)
+KNN is a supervised machine learning algorithm used for classification.
+
+It classifies a new data point by checking its nearest neighbouring data points.
+
+Working:
+1. Select the value of K.
+2. Calculate the distance between data points.
+3. Find the K nearest neighbours.
+4. Select the majority class.
+5. Assign that class to the new data point.
+Example: If K = 5 and 4 neighbours are Spam while 1 is Not Spam, the email is classified as Spam.
+4. Support Vector Machine (SVM)
+SVM is a supervised machine learning algorithm used for classification.
+
+It finds the best separating boundary, called a hyperplane, between different classes.
+
+Working:
+1. Take the training data.
+2. Identify the different classes.
+3. Find the best separating hyperplane.
+4. Classify new data based on which side of the boundary it falls.
+5. Train-Test Split Procedure
+The dataset is divided into two parts:
+- Training data: Used to train the model.
+- Testing data: Used to check model performance.
+In this practical, 70% data is used for training and 30% for testing.
+6. Feature Scaling
+Feature scaling converts numerical values into a common range so that features with larger values do not dominate the learning process.
+
+Here, we use MinMaxScaler, which scales values between 0 and 1.
+\[
+X_{scaled}=\frac{X-X_{min}}{X_{max}-X_{min}}
+\]
+
+2. Dataset description
+Your assignment uses the emails.csv dataset.
+Detail	Information
+Total rows	5172 emails
+Total columns	3002
+First column	Email No
+Middle columns	3000 common words
+Last column	Prediction
+0	Not Spam
+1	Spam
+
+Each row represents one email. The 3000 word columns store how many times each word occurs in that email.
+
+. Code explanation – simple and easy
+Step 1. Import libraries
+import pandas as pdimport numpy as npimport matplotlib.pyplot as pltimport seaborn as sns
+
+
+
+- pandas: Reads and handles the email dataset.
+- numpy: Performs mathematical calculations.
+- matplotlib: Displays graphs.
+- seaborn: Creates statistical graphs such as count plots.
+from sklearn.preprocessing import MinMaxScaler
+
+
+
+Imports MinMaxScaler to convert feature values into the range 0 to 1.
+from sklearn.model_selection import train_test_split
+
+
+
+Imports the function that divides the dataset into training and testing data.
+from sklearn.neighbors import KNeighborsClassifier
+
+
+
+Imports the KNN classification algorithm.
+from sklearn.svm import SVC
+
+
+
+Imports Support Vector Classifier, which implements SVM classification.
+from sklearn.metrics import (    accuracy_score, classification_report,    ConfusionMatrixDisplay)
+
+
+
+- accuracy_score: Calculates prediction accuracy.
+- classification_report: Displays precision, recall and F1-score.
+- ConfusionMatrixDisplay: Displays correct and incorrect predictions in a matrix.
+Step 2. Load the dataset
+df = pd.read_csv('/content/emails.csv')
+
+
+
+- read_csv() reads the CSV file.
+- emails.csv is our dataset.
+- df stores the dataset in table format.
+print(df.shape)print(df.head())
+
+
+
+- shape displays the number of rows and columns.
+- head() displays the first five records.
+Expected shape: (5172, 3002).
+Step 3. Select input and output
+X = df.drop(['Email No', 'Prediction'], axis=1)y = df['Prediction']
+
+
+
+- X contains the 3000 word-count columns.
+- Email No is removed because it is only an email identifier.
+- Prediction is removed from X because it is the answer we want the model to predict.
+- y stores the actual email labels (0 or 1).
+- axis=1 means columns.
+Remember: X = Input data; y = Output or target.
+Step 4. Display count plot
+sns.countplot(x=y)plt.show()
+
+
+
+- countplot() displays how many emails belong to each class.
+- x=y uses the Prediction column.
+- plt.show() displays the graph.
+According to your practical:
+- 3672 emails are Not Spam (0).
+- 1500 emails are Spam (1).
+Why? To understand the distribution of Spam and Not Spam emails.
+Step 5. Feature scaling
+scaler = MinMaxScaler()X_scaled = scaler.fit_transform(X)
+
+
+
+- MinMaxScaler() creates the scaling object.
+- fit_transform() finds the minimum and maximum values and scales the data.
+- X_scaled stores the scaled data.
+Why? KNN uses distance calculations, so features should be on a comparable scale. Scaling is also useful for SVM.
+Step 6. Split dataset
+X_train, X_test, y_train, y_test = train_test_split(    X_scaled, y, test_size=0.30, random_state=0)
+
+
+
+- X_scaled: Input data.
+- y: Actual output labels.
+- test_size=0.30: 30% testing and 70% training.
+- random_state=0: Keeps the split reproducible.
+For 5172 emails, the practical shows:
+- Training records: 3620.
+- Testing records: 1552.
+Step 7. K-Nearest Neighbors
+knn = KNeighborsClassifier(n_neighbors=5)knn.fit(X_train, y_train)y_pred_knn = knn.predict(X_test)
+
+
+
+- KNeighborsClassifier() creates a KNN model.
+- n_neighbors=5 means the model checks the five nearest neighbours.
+- fit() trains the model.
+- predict() predicts whether test emails are Spam or Not Spam.
+- y_pred_knn stores predicted results.
+Example: If 4 out of 5 nearest emails are Spam, the new email is classified as Spam.
+Step 8. Check KNN accuracy
+print("KNN Accuracy:", accuracy_score(y_test, y_pred_knn))print(classification_report(y_test, y_pred_knn))
+
+
+
+- accuracy_score() compares actual and predicted labels.
+- classification_report() gives precision, recall, F1-score and support.
+Meaning of the report:
+Term	Simple meaning
+Precision	Out of emails predicted as spam, how many were actually spam?
+Recall	Out of actual spam emails, how many did the model identify?
+F1-score	Combined measure of precision and recall
+Support	Number of actual records in each class
+
+Step 9. Confusion matrix
+ConfusionMatrixDisplay.from_predictions(y_test, y_pred_knn)plt.show()
+
+
+
+A confusion matrix shows how many predictions were correct and incorrect.
+
+
+
+
+
+
+
+
+
+
+- True Positive (TP): Spam correctly predicted as Spam.
+- True Negative (TN): Not Spam correctly predicted as Not Spam.
+- False Positive (FP): Not Spam incorrectly predicted as Spam.
+- False Negative (FN): Spam incorrectly predicted as Not Spam.
+Step 10. Find the best K value
+error = []for k in range(1, 34):    model = KNeighborsClassifier(n_neighbors=k)    model.fit(X_train, y_train)    pred = model.predict(X_test)    error.append(np.mean(pred != y_test))
+
+
+
+- error=[] creates an empty list.
+- range(1,34) tests K values from 1 to 33.
+- The model is trained for each K value.
+- predict() predicts the test results.
+- pred != y_test checks which predictions are incorrect.
+- np.mean() calculates the error rate.
+- append() stores each error value in the list.
+Why? To compare different K values and identify one with a lower error rate.
+plt.plot(range(1, 34), error, marker='o')plt.xlabel("K Value")plt.ylabel("Error Rate")plt.title("KNN Error Rate")plt.show()
+
+
+
+This graph shows how the KNN error rate changes with different K values.
+Step 11. Support Vector Machine (SVM)
+svm = SVC(kernel='linear')svm.fit(X_train, y_train)y_pred_svm = svm.predict(X_test)
+
+
+
+- SVC() creates an SVM classification model.
+- kernel='linear' uses a linear decision boundary.
+- fit() trains the model.
+- predict() predicts whether emails are Spam or Not Spam.
+- y_pred_svm stores predicted results.
+Why? SVM finds a separating boundary between Spam and Not Spam emails.
+Step 12. Evaluate SVM
+print("SVM Accuracy:", accuracy_score(y_test, y_pred_svm))print(classification_report(y_test, y_pred_svm))ConfusionMatrixDisplay.from_predictions(y_test, y_pred_svm)plt.show()
+
+
+
+This calculates SVM accuracy, displays its classification report and shows its confusion matrix.
+5. Results from your college practical
+Your provided practical shows these results:
+Algorithm	Accuracy
+KNN (K = 5)	86.47%
+KNN (K = 1)	89.17%
+SVM (Linear Kernel)	97.55%
+
+Best result in your practical: SVM
+Conclusion: The email spam detection system successfully classifies emails into Spam and Not Spam categories using KNN and SVM. In the provided practical results, SVM gives better accuracy than KNN.
+
+Note: Your actual accuracy may vary slightly depending on the dataset, train-test split and software environment.
+
+Important viva questions and answers
+1. What is the aim of this practical?
+
+To classify emails as Spam or Not Spam using KNN and SVM algorithms.
+
+2. What is spam email?
+
+An unwanted or unnecessary email, often containing advertisements or suspicious messages.
+
+3. What is binary classification?
+
+A classification technique that divides data into two classes.
+
+4. What are the two classes in this practical?
+- 0 – Not Spam.
+- 1 – Spam.
+5. What is KNN?
+
+K-Nearest Neighbors is a supervised machine learning algorithm that classifies data based on its nearest neighbours.
+
+6. What does K represent in KNN?
+
+K represents the number of nearest neighbours considered for classification.
+
+7. What is SVM?
+
+Support Vector Machine is a supervised machine learning algorithm that separates different classes using the best possible decision boundary.
+
+8. What is a hyperplane?
+
+A hyperplane is a boundary that separates different classes in SVM.
+
+9. What is MinMaxScaler?
+
+It is a feature scaling technique that converts numerical values into a range between 0 and 1.
+
+10. Why do we use train_test_split?
+
+To divide data into training and testing parts.
+
+11. What is the meaning of 70:30 split?
+
+70% data is used for training and 30% for testing.
+
+12. What is accuracy?
+
+Accuracy measures how many predictions are correct out of all predictions.
+\[
+Accuracy=\frac{Correct\ Predictions}{Total\ Predictions}\times100
+\]
+
+13. What is a confusion matrix?
+
+A table that shows correct and incorrect classification results.
+
+14. What is a kernel in SVM?
+
+A kernel helps SVM create a decision boundary between classes. In this practical, we use a linear kernel.
+
+15. Which algorithm performed better in your practical?
+
+SVM, with approximately 97.55% accuracy in the provided results.
+
+16. What is the difference between KNN and SVM?
+KNN	SVM
+Uses nearest neighbours	Uses a separating boundary
+Distance-based algorithm	Hyperplane-based algorithm
+Uses K value	Uses kernel
+Classifies using majority voting	Classifies using the decision boundary
+
+17. What is precision?
+
+The proportion of predicted positive cases that are actually positive.
+
+18. What is recall?
+
+The proportion of actual positive cases correctly identified by the model.
+
+19. What is F1-score?
+
+The combined measure of precision and recall.
+
+20. Why do we use feature scaling?
+
+To bring features into a common numerical range, especially because KNN depends on distance calculations.
+
+7. Important things to remember for your external exam
+Dataset facts
+5172
+Total emails
+3002
+Total columns
+3000
+Word features
+2
+Output classes
+
+
+Important code terms
+- read_csv() – Load dataset.
+- drop() – Remove columns.
+- MinMaxScaler() – Scale features.
+- train_test_split() – Split dataset.
+- KNeighborsClassifier() – KNN model.
+- SVC() – SVM model.
+- fit() – Train model.
+- predict() – Predict output.
+- accuracy_score() – Calculate accuracy.
+- ConfusionMatrixDisplay – Display confusion matrix.

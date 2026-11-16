@@ -1,0 +1,166 @@
+DAA Practical 5 – N-Queens Using Backtracking
+External Practical Preparation
+ Java
+
+1. Aim
+To design an N-Queens matrix with the first Queen placed and use Backtracking to place the remaining Queens to generate the final N-Queens matrix.
+2. Important Theory
+1. Backtracking:
+- Backtracking is an algorithmic technique used to solve problems step by step.
+- It tries one possible solution at a time.
+- If a choice is incorrect, it goes back and tries another choice.
+- It is generally implemented using recursion.
+2. N-Queens Problem:
+- Place N Queens on an N × N chessboard.
+- No two Queens should attack each other.
+- Queens cannot be in the same row, column or diagonal.
+- The objective is to find a valid arrangement.
+3. Backtracking Steps:
+1. Place the first Queen.
+2. Move to the next row.
+3. Check whether the position is safe.
+4. If safe, place the Queen.
+5. Move to the next row.
+6. If no safe position exists, remove the previous Queen and try another position.
+7. Repeat until all Queens are placed.
+4. Applications of Backtracking:
+- N-Queens Problem.
+- Graph Coloring.
+- Sum of Subsets.
+- Hamiltonian Cycle.
+Example Input
+Enter N: 4
+Enter first Queen column (1 to 4): 2
+
+
+Output:
+N-Queens Solution:
+0 1 0 0
+0 0 0 1
+1 0 0 0
+0 0 1 0
+
+
+Here:
+- 1 = Queen placed.
+- 0 = Empty position.
+4. Simple Code Explanation
+1. Board creation
+board = new int[N][N];
+
+
+Creates an N × N chessboard. Initially all positions contain 0.
+
+2. isSafe() method
+static boolean isSafe(int row, int col)
+
+
+Checks whether a Queen can be safely placed in the given position.
+
+It checks:
+- Same column.
+- Upper-left diagonal.
+- Upper-right diagonal.
+3. solve() method
+if (row == N)
+    return true;
+
+
+If all Queens are placed, the solution is found.
+
+4. Place Queen
+board[row][col] = 1;
+
+
+Places a Queen at a safe position.
+
+5. Recursive call
+if (solve(row + 1))
+    return true;
+
+
+Moves to the next row to place another Queen.
+
+6. Backtracking
+board[row][col] = 0;
+
+
+If the selected position does not lead to a solution, removes the Queen and tries another position.
+
+7. Main method
+
+Takes board size and first Queen position, calls the solving function and prints the final matrix.
+5. Time and Space Complexity
+Complexity	Value
+Time Complexity	O(N!) (upper-bound)
+Space Complexity	O(N²)
+
+Explanation:
+- Time: The algorithm tries different Queen positions using backtracking.
+- Space: The chessboard requires O(N²) space. Recursion requires O(N) additional space.
+6. Flowchart
+START
+Input N and first Queen position
+Place first Queen
+Is position safe?
+Place Queen and move to next row
+All Queens placed?
+YES
+Print chessboard
+STOP
+
+NO
+Backtrack and try next position
+Repeat the process
+
+
+7. Important Viva Questions
+Question	Answer
+What is Backtracking?	Trying solutions and going back when a choice fails.
+What is N-Queens Problem?	Placing N Queens without attacking each other.
+Which algorithm is used?	Backtracking.
+What are the attacking directions?	Row, column and diagonal.
+What does 1 represent?	Queen placed.
+What does 0 represent?	Empty position.
+What is isSafe()?	Checks whether a position is safe.
+What is backtracking statement?	board[row][col] = 0
+Can N = 2 and N = 3 have solutions?	No.
+Time complexity?	O(N!) upper-bound.
+Space complexity?	O(N²) including the board.
+
+8. Conclusion
+Thus, we implemented the N-Queens Problem using Backtracking and generated a valid chessboard arrangement in which no two Queens attack each other.
+
+Last-minute revision – Remember these 5 points
+1. N × N chessboard.
+2. No two Queens in the same row, column or diagonal.
+3. isSafe() checks the position.
+4. solve() places Queens recursively.
+5. board[row][col] = 0 performs backtracking.
+Most important: isSafe() + solve() + Backtracking
+
+Important exam note: N-Queens is not limited to N = 4 and N = 8. N = 1 is trivial, N = 2 and N = 3 have no solution, and solutions exist for every N ≥ 4. For your practical, N = 4 is the easiest example to demonstrate.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4-Queen ka step-by-step solution
+DAA Practical 5 ka code dry run
+DAA Practical 1–5 viva questions

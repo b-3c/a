@@ -1,0 +1,185 @@
+DAA Practical 4 – 0/1 Knapsack Using Dynamic Programming
+External Practical Preparation
+ Java
+
+1. Aim
+To write a program to solve the 0/1 Knapsack Problem using Dynamic Programming.
+2. Important Theory
+1. Dynamic Programming (DP):
+- Dynamic Programming is a technique used to solve complex problems by dividing them into smaller subproblems.
+- It stores previously calculated results in a table.
+- It avoids repeated calculations.
+- It is useful for optimization problems.
+2. 0/1 Knapsack Problem:
+- A knapsack has a limited weight capacity.
+- Each item has a weight and a value (profit).
+- Items cannot be divided.
+- We either select the complete item (1) or reject it (0).
+- The objective is to get maximum profit without exceeding capacity.
+3. Steps of Dynamic Programming:
+1. Create a table of size (n+1) × (W+1).
+2. Initialize the first row and column with zero.
+3. Calculate values using the DP formula.
+4. Fill the table row by row.
+5. The last cell gives the maximum profit.
+6. Trace the table to identify selected items.
+4. Formula
+\[
+DP[i][j]=
+\begin{cases}
+DP[i-1][j] & w_i>j\\
+\max(DP[i-1][j],v_i+DP[i-1][j-w_i]) & w_i\leq j
+\end{cases}
+\]
+
+Where:
+- i = Current item.
+- j = Knapsack capacity.
+- w = Weight.
+- v = Value.
+Example Input
+Enter number of items: 4
+Enter weight and value: 1 1
+Enter weight and value: 2 6
+Enter weight and value: 3 10
+Enter weight and value: 5 12
+Enter capacity: 5
+
+
+Output:
+Maximum Profit = 16
+Selected Items: 3 2
+
+
+Explanation: Item 2 and Item 3 are selected.
+- Total weight = 2 + 3 = 5
+- Total profit = 6 + 10 = 16
+4. Simple Code Explanation
+1. Input arrays
+int[] weight = new int[n];
+int[] value = new int[n];
+
+
+Stores the weight and value of each item.
+
+2. DP table
+int[][] dp = new int[n + 1][W + 1];
+
+
+Creates a table to store maximum profit for different items and capacities.
+
+3. Check item weight
+if (weight[i - 1] <= j)
+
+
+Checks whether the current item fits in the knapsack.
+
+4. Calculate maximum profit
+dp[i][j] = Math.max(
+    dp[i - 1][j],
+    value[i - 1] + dp[i - 1][j - weight[i - 1]]
+);
+
+
+Compares two choices:
+- Do not take the item.
+- Take the item and add its value.
+It selects whichever gives maximum profit.
+
+5. If item does not fit
+else {
+    dp[i][j] = dp[i - 1][j];
+}
+
+
+Keeps the previous maximum profit.
+
+6. Display maximum profit
+System.out.println("Maximum Profit = " + dp[n][W]);
+
+
+Prints the final maximum profit from the last cell.
+
+7. Find selected items
+if (dp[i][j] != dp[i - 1][j]) {
+    System.out.print(i + " ");
+    j = j - weight[i - 1];
+}
+
+
+Checks which items were selected by tracing the DP table backwards.
+5. Time and Space Complexity
+Complexity	Value
+Time Complexity	O(n × W)
+Space Complexity	O(n × W)
+
+Explanation:
+- Time: Two nested loops fill the DP table.
+- Space: A 2D table stores results for all items and capacities.
+Here, n = number of items and W = knapsack capacity.
+6. Flowchart
+START
+Input items, weights, values and capacity
+Initialize DP table with 0
+Check each item and capacity
+Item weight ≤ Capacity?
+YES
+Choose maximum of taking or not taking item
+
+NO
+Copy previous DP value
+
+
+Fill complete DP table
+Print maximum profit and selected items
+STOP
+
+7. Important Viva Questions
+Question	Answer
+What is Dynamic Programming?	Solving problems and storing previous results.
+What is 0/1 Knapsack?	Selecting or rejecting complete items.
+Can we take half an item?	No.
+What is DP table?	A table that stores calculated results.
+What is the objective?	Maximum profit within capacity.
+What is the DP formula?	Maximum of taking or not taking an item.
+What is overlapping subproblem?	Repeated calculation of the same subproblem.
+What is optimal substructure?	Optimal solution depends on smaller optimal solutions.
+Time complexity?	O(n × W).
+Space complexity?	O(n × W).
+
+8. Conclusion
+Thus, we implemented the 0/1 Knapsack Problem using Dynamic Programming and calculated the maximum profit.
+
+Last-minute revision – Remember these 5 points
+1. Items cannot be divided.
+2. Either take (1) or reject (0).
+3. Use a 2D DP table.
+4. Formula = Math.max(take, not take).
+5. Complexity = O(n × W) time and space.
+Most important: DP formula and 2D table
+
+Exam tip: Focus on remembering Math.max() and the two nested for loops. They are the main logic of this practical. Also remember that unlike Fractional Knapsack, 0/1 Knapsack does not allow fractions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Explain DP table with example
+Compare Fractional and 0/1 Knapsack
+Fix Java code for all compilers

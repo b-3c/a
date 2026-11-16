@@ -1,0 +1,244 @@
+Implement Gradient Descent Algorithm
+This practical is different from the previous classification practicals. Here, we use Gradient Descent to find the minimum value of a mathematical function.
+
+I'll explain your assignment's example, give you short Python code for Google Colab, explain every important line, and prepare viva questions.
+1. Aim
+Implement the Gradient Descent algorithm in Python to find the local minimum of a given function.
+2. Problem statement
+Find the local minimum of:
+\[
+y=(x+5)^2
+\]
+
+Starting point:
+\[
+x=3
+\]
+
+Learning rate:
+\[
+\alpha=0.01
+\]
+
+Precision:
+\[
+0.000001
+\]
+
+Maximum iterations:
+\[
+10000
+\]
+
+Expected answer:
+
+When \(x=-5\),
+\[
+y=(-5+5)^2=0
+\]
+
+Therefore, the minimum occurs at \(x=-5\), where \(y=0\).
+3. Theory in simple words
+What is Gradient Descent?
+
+Gradient Descent is an optimization algorithm used to find the minimum value of a function.
+
+In simple words:
+- Start from an initial point.
+- Calculate the gradient (slope).
+- Move in the opposite direction of the gradient.
+- Repeat until the minimum point is reached.
+Why do we move in the opposite direction?
+
+The gradient tells us the direction of the steepest increase. To decrease the function value, we move in the opposite direction.
+
+Important formula:
+\[
+x_{\text{new}}=x_{\text{old}}-\alpha f'(x)
+\]
+
+Where:
+- \(x_{\text{new}}\) = New value of x
+- \(x_{\text{old}}\) = Previous value of x
+- \(\alpha\) = Learning rate
+- \(f'(x)\) = Gradient or derivative
+For your function:
+\[
+y=(x+5)^2
+\]
+
+Differentiate:
+\[
+\frac{dy}{dx}=2(x+5)
+\]
+
+This derivative is used as the gradient.
+Expected result
+- Local minimum approximately: -4.99995
+- Minimum value of y approximately: 0
+- The algorithm stops when the change in x becomes smaller than the precision or reaches the maximum iteration limit.
+5. Explanation of every code section
+Code	Explanation
+import matplotlib.pyplot as plt	Imports the graph plotting library.
+cur_x = 3	Starting value of x.
+rate = 0.01	Learning rate; controls the step size.
+precision = 0.000001	Accuracy limit for stopping.
+previous_step_size = 1	Initial step difference.
+max_iters = 10000	Maximum number of iterations.
+iters = 0	Initializes iteration counter.
+df = lambda x: 2 * (x + 5)	Defines the derivative of the function.
+gd = []	Creates an empty list to store x values.
+while	Repeats the process until the stopping condition is met.
+prev_x = cur_x	Stores the previous x value.
+cur_x = cur_x - rate * df(prev_x)	Updates x using the Gradient Descent formula.
+abs(cur_x - prev_x)	Calculates the difference between old and new x.
+iters += 1	Increases the iteration count by one.
+gd.append(cur_x)	Stores the new x value for plotting.
+print()	Displays the final answer.
+plt.plot(gd)	Displays how x approaches the minimum.
+
+6. Understand the first two iterations by hand
+Given:
+\[
+x=3,\quad \alpha=0.01
+\]
+
+Gradient:
+\[
+f'(x)=2(x+5)
+\]
+
+Iteration 1
+
+Step 1: Calculate gradient.
+\[
+f'(3)=2(3+5)=16
+\]
+
+Step 2: Update x.
+\[
+x=3-(0.01\times16)
+\]
+
+\[
+\boxed{x=2.84}
+\]
+
+Iteration 2
+\[
+f'(2.84)=2(2.84+5)=15.68
+\]
+
+\[
+x=2.84-(0.01\times15.68)
+\]
+
+\[
+\boxed{x=2.6832}
+\]
+
+The x value keeps decreasing and approaches -5.
+7. Graph explanation
+
+
+
+
+
+
+
+
+justinmath.com
+
+
+- The curve represents the function.
+- The lowest point is the minimum.
+- Gradient Descent moves step by step towards the lowest point.
+- At \(x=-5\), the function reaches its minimum value of zero.
+8. Important viva questions and answers
+Q1. What is Gradient Descent?
+
+Gradient Descent is an optimization algorithm used to find the minimum value of a function.
+
+Q2. What is the main purpose of Gradient Descent?
+
+To minimize the function or reduce its error.
+
+Q3. What is a gradient?
+
+A gradient is the derivative or slope of a function.
+
+Q4. What is the learning rate?
+
+The learning rate controls how big a step the algorithm takes during each iteration.
+
+Q5. What happens if the learning rate is too high?
+
+The algorithm may overshoot the minimum and fail to converge.
+
+Q6. What happens if the learning rate is too low?
+
+The algorithm takes a very long time to reach the minimum.
+
+Q7. What is precision?
+
+Precision is the stopping limit that determines when the algorithm should stop.
+
+Q8. What is an iteration?
+
+One complete repetition of the Gradient Descent update process.
+
+Q9. Why do we use a negative gradient?
+
+Because the gradient points towards the steepest increase, while we want to decrease the function.
+
+Q10. What is a local minimum?
+
+A point where the function value is lower than nearby points.
+
+Q11. What is a global minimum?
+
+The lowest value of the function over its entire domain.
+
+Q12. What is the derivative of \((x+5)^2\)?
+\[
+2(x+5)
+\]
+
+Q13. What is the minimum point of this function?
+
+\(x=-5,\ y=0\).
+
+Q14. Which Python library is used to draw the graph?
+
+Matplotlib.
+
+Q15. What is the role of max_iters?
+
+It limits the maximum number of iterations to prevent an endless loop.
+9. Important: Your notebook contains another example
+Your scanned notebook also shows a second example:
+gf = lambda x: (x + 3)
+
+
+
+This is a different gradient function. It corresponds to the function:
+\[
+y=\frac{1}{2}(x+3)^2
+\]
+
+Its minimum occurs at \(x=-3\), not -5.
+
+For your Assignment No. 5 main problem, use the first code with:
+cur_x = 3df = lambda x: 2 * (x + 5)
+
+
+
+Do not mix the two examples.
+10. Last-minute revision
+Remember these five things:
+1. Gradient Descent finds the minimum of a function.
+2. Gradient means derivative or slope.
+3. Learning rate controls the step size.
+4. Update formula: x = x - rate * gradient.
+5. For your assignment, the expected minimum is x = -5 and y = 0.
+Conclusion: We successfully implemented the Gradient Descent algorithm in Python to find the minimum of the given function.

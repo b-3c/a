@@ -1,0 +1,184 @@
+Blockchain – Assignment No. 1
+External practical preparation
+ Theory + Practical + Viva
+
+
+Title: Installation of MetaMask and Study of Spending Ether per Transaction.
+
+Objective: To learn MetaMask, its applications, and how to perform Ethereum transactions.
+
+I have checked your complete material. For this practical, you do not need to write any programming code. It is mainly an installation, wallet creation and cryptocurrency transaction practical.
+1. Important theory – Write in your journal
+This is the shortened version. It covers the important concepts without unnecessary explanations.
+1. Introduction to Blockchain
+Blockchain is a distributed digital ledger that stores transaction records in blocks. These blocks are connected to each other using cryptography.
+- It is decentralized, meaning no single authority controls it.
+- Transactions are recorded digitally.
+- Once recorded, data is very difficult to change.
+- Every transaction is verified by network participants.
+- It provides security, transparency and trust.
+2. Features of Blockchain
+1. Decentralization: No single person or organization controls the entire blockchain network.
+
+2. Peer-to-Peer Network: Users can directly transfer information or cryptocurrency without an intermediary.
+
+3. Immutability: Once data is added to the blockchain, it is very difficult to modify or delete.
+
+4. Tamper-Proof: Blockchain uses cryptographic hashes to detect unauthorized changes in data.
+3. Cryptocurrency
+Cryptocurrency is a digital currency that uses cryptography for secure transactions.
+- It works on blockchain technology.
+- It can be transferred electronically.
+- It does not require a traditional bank for peer-to-peer transfers.
+- Examples: Bitcoin, Ether and Litecoin.
+4. Transaction Wallets
+A cryptocurrency wallet is a digital wallet used to store and manage crypto assets and interact with blockchain networks.
+
+Types of keys:
+- Public Key/Address: Used to receive cryptocurrency.
+- Private Key: Used to authorize transactions. It must be kept secret.
+Types of wallets:
+- Hot Wallet: Connected to the internet.
+- Cold Wallet: Stored offline.
+5. Ether Transaction
+Ether (ETH) is the native cryptocurrency of the Ethereum blockchain.
+
+An Ether transaction is the process of transferring ETH from one wallet address to another.
+
+Steps involved:
+1. Open the MetaMask wallet.
+2. Click on Send.
+3. Enter the receiver's wallet address.
+4. Enter the amount of ETH.
+5. Check the gas fee.
+6. Confirm the transaction.
+7. The transaction is broadcast to the Ethereum network.
+8. After verification, it is recorded on the blockchain.
+Gas Fee: Gas fee is the transaction fee paid to process transactions on the Ethereum network. It is generally paid in ETH.
+6. MetaMask
+MetaMask is a cryptocurrency wallet that allows users to store, send and receive Ether and interact with Ethereum-based applications.
+
+Features:
+- Creates and manages crypto wallets.
+- Sends and receives ETH.
+- Connects with decentralized applications (DApps).
+- Allows users to view transaction history.
+- Supports Ethereum and compatible networks.
+7. Benefits of Blockchain
+1. Time-saving: Transactions can be processed without traditional intermediaries.
+2. Cost-saving: Reduces the need for third-party services.
+3. Security: Uses cryptography to protect transaction records.
+4. Transparency: Transactions can be verified on the blockchain.
+5. Decentralization: No central authority controls the network.
+2. Installation procedure of MetaMask
+
+
+
+
+
+
+
+
+samsclass.info
+
+
+1. Open Google Chrome browser.
+2. Visit the official website: https://metamask.io.
+3. Click on Download and select Chrome.
+4. Click Add to Chrome.
+5. Click Add Extension.
+6. Open the MetaMask extension.
+7. Select Create a New Wallet.
+8. Create a strong password.
+9. Read and accept the terms and conditions.
+10. Reveal and safely write down the 12-word Secret Recovery Phrase.
+11. Verify the recovery phrase in the correct order.
+12. Click Confirm.
+13. Your MetaMask wallet is successfully created.
+Important
+ Never share your Secret Recovery Phrase or private key with anyone.
+3. Procedure to receive and send Ether
+
+
+
+
+
+
+
+
+remote3.co
+
+
+To receive Ether:
+1. Open MetaMask.
+2. Select your Ethereum account.
+3. Copy your public wallet address.
+4. Share it with the sender.
+5. Wait for the transaction confirmation.
+To send Ether:
+1. Open MetaMask.
+2. Click Send.
+3. Enter the receiver's wallet address.
+4. Enter the amount of ETH.
+5. Check the estimated gas fee.
+6. Click Next.
+7. Review the transaction details.
+8. Click Confirm to send.
+4. Spending Ether per transaction
+Ether transaction cost consists of:
+- Transfer Amount: ETH sent to the receiver.
+- Gas Fee: Fee paid for processing the transaction.
+Formula:
+\[
+\text{Gas Fee}=\text{Gas Used}\times\text{Gas Price}
+\]
+
+\[
+\text{Total ETH Spent}=\text{Transfer Amount}+\text{Gas Fee}
+\]
+
+Example:
+Particulars	Amount
+ETH transferred	0.01 ETH
+Gas fee (example)	0.001 ETH
+Total spent	0.011 ETH
+
+These are illustrative values, not actual network fees.
+5. Result
+Successfully studied blockchain technology, installed MetaMask, created a cryptocurrency wallet and understood the process of sending and receiving Ether and calculating transaction fees.
+
+6. Important viva questions
+Learn these questions first. They are especially useful for this practical.
+Question	Short answer
+1. What is blockchain?	A decentralized digital ledger.
+2. What is MetaMask?	A cryptocurrency wallet.
+3. What is Ether?	Native cryptocurrency of Ethereum.
+4. What is Ethereum?	A blockchain platform supporting smart contracts.
+5. What is cryptocurrency?	Digital currency secured using cryptography.
+6. What is a wallet address?	An address used to receive cryptocurrency.
+7. What is a private key?	A secret key used to authorize transactions.
+8. What is a gas fee?	Fee paid for processing an Ethereum transaction.
+9. What is a DApp?	Decentralized Application.
+10. What is decentralization?	No single authority controls the network.
+11. What is a seed phrase?	A recovery phrase used to restore a wallet.
+12. What is immutability?	Data cannot easily be changed once recorded.
+13. What is P2P?	Peer-to-Peer communication.
+14. Name two cryptocurrencies.	Bitcoin and Ether.
+15. What is a transaction hash?	A unique identifier of a blockchain transaction.
+
+7. What to remember for tomorrow's external
+Most important points
+- MetaMask = Cryptocurrency wallet.
+- Ethereum = Blockchain platform.
+- Ether = Ethereum's native cryptocurrency.
+- Gas Fee = Transaction processing fee.
+- Public Address = Receive cryptocurrency.
+- Private Key = Authorize transactions.
+- Seed Phrase = Recover wallet.
+- Blockchain = Distributed ledger.
+- DApp = Decentralized Application.
+- P2P = Peer-to-Peer.
+
+My recommendation: Write sections 1–5 in your practical sheet. The theory is concise enough for approximately two handwritten pages, depending on your handwriting. Learn the viva questions separately.
+
+Practical-specific note: If the examiner asks you to demonstrate a transaction, use an Ethereum test network and test ETH for practice rather than spending real money.

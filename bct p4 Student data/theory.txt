@@ -1,0 +1,168 @@
+Blockchain – Assignment No. 4
+Coding practical
+ Solidity + Structures + Arrays + Fallback
+
+
+Title: Write a program in Solidity to create Student data using Structures, Arrays and Fallback. Deploy it as a smart contract on Ethereum and observe transaction fee and Gas value.
+
+Objective: To understand and explore the working of blockchain technology and its applications.
+
+Course Outcome: CO6 – Interpret the basic concepts in Blockchain technology and its applications.
+
+For this practical, I have shortened your original code and included all three required constructs: Structure, Array and Fallback.
+1. Important theory – Write in your journal
+1. Structure
+A structure is a user-defined data type in Solidity used to store different types of data under one name.
+
+Example: Student ID, Name and Department can be stored in one structure.
+2. Array
+An array is a collection of elements of the same data type stored under one variable name.
+- It stores multiple values.
+- Array elements are accessed using an index.
+- push() is used to add elements to a dynamic array.
+3. Fallback Function
+A fallback function is a special function in Solidity that executes when a function call does not match any existing function or when a transaction is sent with empty data.
+- It is declared using fallback().
+- It must be external.
+- It can be payable to receive Ether.
+4. Gas and Transaction Fee
+Gas: Gas is the unit used to measure the computational work required to execute operations on Ethereum.
+
+Gas Fee: It is the fee paid for executing a transaction on Ethereum.
+
+Formula:
+\[
+\text{Transaction Fee}=\text{Gas Used}\times\text{Gas Price}
+\]
+What I kept in the code:
+- struct Student – stores student details.
+- Student[] Students – stores multiple students.
+- add_stud() – adds student details.
+- getStudent() – searches student using ID.
+- fallback() – handles unmatched calls and can receive ETH.
+3. Simple explanation of code
+Code	Meaning
+pragma solidity ^0.8.20;	Specifies Solidity version.
+contract Student_management	Creates the smart contract.
+struct Student	Creates student data structure.
+uint stud_id	Stores student ID.
+string name	Stores student name.
+string department	Stores department name.
+Student[] Students	Creates an array of students.
+add_stud()	Adds student information.
+push()	Inserts a student into the array.
+getStudent()	Searches student details by ID.
+for loop	Checks each student in the array.
+if	Checks whether student ID matches.
+fallback()	Executes for unmatched function calls or empty calldata.
+payable	Allows the fallback function to receive ETH.
+
+4. Steps to execute in Remix IDE
+
+
+
+
+
+
+
+
+theserverside.com
+
+
+1. Open https://remix.ethereum.org.
+2. Click File Explorer.
+3. Create a new file named Student.sol.
+4. Paste the above code.
+5. Open Solidity Compiler.
+6. Select version 0.8.20 or compatible.
+7. Click Compile Student.sol.
+8. Open Deploy & Run Transactions.
+9. Select Remix VM environment.
+10. Click Deploy.
+11. Expand the deployed contract.
+12. Use add_stud and getStudent to perform operations.
+5. Sample input and output
+Operation 1: Add Student
+
+Enter the following values in add_stud:
+Field	Input
+id	101
+name	Rahul
+dept	Computer
+
+Click add_stud.
+Transaction successful
+Operation 2: Get Student Details
+
+Enter 101 in getStudent and click the button.
+
+Expected output:
+["Rahul", "Computer"]
+
+
+If you enter an ID that does not exist:
+["Not Found", "Not Found"]
+
+
+You can add multiple students using add_stud.
+6. How to observe Gas and Transaction Fee
+
+
+
+
+
+
+
+
+remix-ide.readthedocs.io
+
+
+1. Deploy the smart contract.
+2. Click add_stud to add student details.
+3. Open the Remix Terminal at the bottom.
+4. Select the transaction details.
+5. Observe Gas Used, Transaction Cost and Execution Cost.
+6. Compare the gas values for different transactions.
+Important terms:
+Term	Meaning
+Gas Used	Gas consumed by the operation.
+Gas Limit	Maximum gas allowed for the transaction.
+Gas Price	Price paid per unit of gas.
+Transaction Fee	Total fee paid for the transaction.
+
+Note: add_stud changes blockchain data and costs gas. getStudent is a view function, so it does not require an on-chain transaction when called normally through Remix.
+
+Fallback testing: The fallback function does not normally appear as a separate button in Remix. To test it, send a transaction directly to the deployed contract address with empty calldata. It will execute the fallback function. You can attach ETH using the Value field.
+7. Important viva questions
+Question	Answer
+1. What is a structure?	User-defined data type.
+2. What is an array?	Collection of elements.
+3. What is fallback?	Special function called for unmatched calls or empty calldata.
+4. What is Solidity?	Smart contract programming language.
+5. What is Remix IDE?	Online Solidity development environment.
+6. What is push()?	Adds an element to an array.
+7. What is a dynamic array?	An array whose size can change.
+8. What is a loop?	Repeats a set of statements.
+9. What is uint?	Unsigned integer.
+10. What is string?	Data type used to store text.
+11. What is Gas?	Unit of computational work on Ethereum.
+12. What is Gas Fee?	Fee paid for blockchain execution.
+13. What is payable?	Allows a function to receive Ether.
+14. What is memory?	Temporary data storage during function execution.
+15. What is a transaction?	An operation submitted to a blockchain.
+
+8. Quick revision before external
+Remember these important points
+- Structure = Stores different types of data.
+- Array = Stores multiple elements.
+- push() = Adds elements.
+- fallback() = Handles unmatched calls.
+- payable = Receives ETH.
+- for = Repeats operations.
+- if = Checks conditions.
+- uint = Unsigned integer.
+- Gas = Computational work.
+- Gas Fee = Transaction cost.
+
+9. Result
+Hence, successfully created and deployed a Student Management Smart Contract using Solidity in Remix IDE using Structures, Arrays and Fallback, and studied the transaction fee and Gas value.
